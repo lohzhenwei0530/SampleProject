@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/main_graph" app:startDestination="@id/userFragment">
+
+    <fragment android:id="@+id/userFragment" android:name="com.example.sampleproject.fragment.UserFragment"
+    >
+        <action android:id="@+id/action_to_google_map_fragment" app:destination="@id/googleMapFragment"/>
+    </fragment>
+    <fragment android:id="@+id/googleMapFragment" android:name="com.example.sampleproject.fragment.GoogleMapFragment"
+    />
+</navigation>

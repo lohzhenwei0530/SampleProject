@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.sampleproject"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
+    implementation "androidx.core:core-ktx:${versions.androidx.core}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.androidx.constraint}"
+    implementation "androidx.recyclerview:recyclerview:${versions.androidx.recyclerview}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.androidx.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.androidx.navigation}"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidx.viewmodel}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.square.okhttp}"
+    implementation "com.squareup.retrofit2:retrofit:$versions.square.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.square.retrofit}"
+    implementation "com.squareup.retrofit2:converter-jackson:${versions.square.retrofit}"
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rx.java}"
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rx.android}"
+    implementation "io.reactivex.rxjava2:rxkotlin:${versions.rx.kotlin}"
+
+    implementation "com.google.android.gms:play-services-maps:${versions.gms}"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
