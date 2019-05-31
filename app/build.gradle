@@ -43,6 +43,10 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rx.android}"
     implementation "io.reactivex.rxjava2:rxkotlin:${versions.rx.kotlin}"
 
+    implementation "androidx.room:room-runtime:${versions.androidx.room}"
+    kapt "androidx.room:room-compiler:$versions.androidx.room"
+    implementation "androidx.room:room-rxjava2:$versions.androidx.room"
+
     implementation "com.google.android.gms:play-services-maps:${versions.gms}"
 
     testImplementation 'junit:junit:4.12'

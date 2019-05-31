@@ -14,4 +14,9 @@ object Constants {
             const val jsonBase = "https://jsonplaceholder.typicode.com/"
         }
     }
+
+    object Database {
+        const val DB_NAME = "sample_db"
+    }
+
 }
