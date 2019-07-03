@@ -4,16 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleproject.R
 import com.example.sampleproject.network.model.User
 import kotlinx.android.synthetic.main.view_user_layout.view.*
-import java.util.zip.Inflater
 
 class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
-    var userList: List<User> = ArrayList()
+    var userList: ArrayList<User> = ArrayList()
     private var context: Context
     private var inflater: LayoutInflater
 
@@ -47,8 +45,13 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
     }
 
-    fun populateUserList(userList: List<User>) {
+    fun populateUserList(userList: ArrayList<User>) {
         this.userList = userList
+        notifyDataSetChanged()
+    }
+
+    fun insertUser(user : User){
+        this.userList.add(user)
         notifyDataSetChanged()
     }
 
